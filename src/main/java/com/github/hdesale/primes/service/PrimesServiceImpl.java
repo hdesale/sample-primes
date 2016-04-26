@@ -37,7 +37,7 @@ public class PrimesServiceImpl implements PrimesService {
 
     @Override
     public int[] getPrimesInRange(int from, int to) {
-        List<Integer> primes = new ArrayList<>(to - from);
+        List<Integer> primes = Collections.synchronizedList(new ArrayList<Integer>(to - from));
         // using custom pool to avoid parallel stream using ForkJoinPool.commonPool() which may cause contention
         ForkJoinPool forkJoinPool = new ForkJoinPool(POOL_SIZE);
         try {
