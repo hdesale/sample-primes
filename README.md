@@ -1,6 +1,8 @@
 # sample-primes
 
-JDK Version: Java 8
+_JDK Version_: Java 8
+
+_How to run_: mvn exec:java
 
 Description of RESTful services:
 
